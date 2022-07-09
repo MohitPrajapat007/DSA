@@ -1,0 +1,19 @@
+class Solution {
+public:
+    vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
+        vector<int> result;
+        int i,j,n,current,count;
+        n=nums.size();
+        for(i=0;i<n;i++){
+            current=nums[i];
+            count=0;
+            for(j=0;j<n;j++){
+                if(current>nums[j] && i!=j){
+                    count++;
+                }                
+            }
+            result.push_back(count);
+        }
+        return result;
+    }
+};
